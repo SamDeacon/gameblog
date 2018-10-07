@@ -17,18 +17,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
+Route::prefix('admin')->group(function(){
 
-    // // LIST ARTICLES
-    // Route::get('/api/categories', 'CategoryController@index');
-    // // LIST ARTICLES
-    // Route::get('/api/categories', 'CategoryController@index');
-    // // LIST ARTICLES
-    // Route::get('/api/categories', 'CategoryController@index');
-    // // LIST ARTICLES
-    // LIST ARTICLES
 
 });
+Route::apiResources ([
+  'admin/api/user' => 'API\UserController'
+]);
+
 
 Route::get('admin/api/categories', 'CategoryController@index');
 // LIST SINGLE ARTICLE

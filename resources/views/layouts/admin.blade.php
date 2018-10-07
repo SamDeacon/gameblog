@@ -156,7 +156,7 @@
           <img src="{{ asset('img/admin/diver.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Sam Deacon</a>
+          <a href="#" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -165,68 +165,59 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
+           <li class="nav-item">
+             <a href="{{route('admin.dashboard')}}" class="nav-link">
+               <i class="nav-icon fa fa-th text-cyan"></i>
+               <p>
+                 Dashboard
+               </p>
+             </a>
+           </li>
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fa fa-file"></i>
+              <i class="nav-icon fa fa-cog text-yellow"></i>
               <p>
-                Starter Pages
+                Manage
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Active Page</p>
+                <a href="{{ route('admin.categories') }}" class="nav-link">
+                  &nbsp;&nbsp;<i class="nav-icon fa fa-tags text-green"></i>
+                  <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.users')}}" class="nav-link">
+                  &nbsp;&nbsp;<i class="nav-icon fa fa-users text-yellow"></i>
+                  <p>Users</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Inactive Page</p>
+                  &nbsp;&nbsp;<i class="nav-icon fa fa-times text-red"></i>
+                  <p>User Blocklist</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
+            <a href="{{route('admin.dashboard')}}" class="nav-link">
+              <i class="nav-icon fa fa-user text-orange"></i>
               <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
+                Profile
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
+            <a href="{{url('/logout')}}" class="nav-link">
+              <i class="nav-icon fa fa-power-off text-red"></i>
               <p>
-                Link anyone can see
-                <span class="right badge badge-danger">New</span>
+                Logout
               </p>
             </a>
           </li>
-          @can('isAdmin')
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
-              <p>
-                Link only admin can see
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-          @endcan
-          <li class="nav-item">
-            <a href="{{ route('admin.categories') }}" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
-              <p>
-                Admin.Categories
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-          a
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -237,6 +228,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <vue-progress-bar></vue-progress-bar>
     @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -255,10 +247,10 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      RETROSHRINE
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2018 <a href="http://nerdygoat.co.uk">Nerdy Goat</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018-2019 <a href="http://nerdygoat.co.uk">Nerdy Goat</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

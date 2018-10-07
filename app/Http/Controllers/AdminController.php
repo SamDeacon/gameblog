@@ -34,4 +34,8 @@ class AdminController extends Controller
     {
         return view('admin.categories');
     }
+    public function users()
+    {
+        return view('admin.users');
+    }
 }

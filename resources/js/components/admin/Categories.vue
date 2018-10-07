@@ -34,11 +34,11 @@
 
     <div class="card"v-for="category in categories" v-bind:key="category.id">
       <div class="card card-header text-white bg-primary">
-        <h3 class="mb-0">{{ category.title }} | <small>{{category.id}}</small> 
-        <a @click="deleteCategory(category.id)" class="collapse-link">
+        <h3 class="mb-0">{{ category.title }} | <small>{{category.id}}</small>
+        <a @click="deleteCategory(category.id)" class="collapse-link cursor-pointer">
           <i  class="fa fa-times float-right ml-3"></i>
         </a>
-        <a @click="editCategory(category)" class="collapse-link">
+        <a @click="editCategory(category)" class="collapse-link cursor-pointer">
           <i class="fa fa-wrench float-right"></i>
         </a>
         </h3>

@@ -30972,3 +30972,43 @@ readers do not read off random characters that represent icons */
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.text-blue {
+  color: #3490dc;
+}
+
+.text-purple {
+  color: #9561e2;
+}
+
+.text-pink {
+  color: #f66D9b;
+}
+
+.text-red {
+  color: #e3342f;
+}
+
+.text-green {
+  color: #38c172;
+}
+
+.text-orange {
+  color: #f6993f;
+}
+
+.text-yellow {
+  color: #ffed4a;
+}
+
+.text-cyan {
+  color: #6cb2eb;
+}
+
+.text-teal {
+  color: #4dc0b5;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+

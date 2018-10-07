@@ -19,3 +19,33 @@ $fa-font-path: "../webfonts";
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.text-blue{
+  color: $blue;
+}
+.text-purple{
+  color: $purple;
+}
+.text-pink{
+  color: $pink;
+}
+.text-red{
+  color: $red;
+}
+.text-green{
+  color: $green;
+}
+.text-orange{
+  color: $orange;
+}
+.text-yellow{
+  color: $yellow;
+}
+.text-cyan{
+  color: $cyan;
+}
+.text-teal{
+  color: $teal;
+}
+
+.cursor-pointer{cursor: pointer;}
