@@ -38,4 +38,8 @@ class AdminController extends Controller
     {
         return view('admin.users');
     }
+    public function developer()
+    {
+        return view('admin.developer');
+    }
 }

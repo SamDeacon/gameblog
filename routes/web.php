@@ -26,6 +26,7 @@ Route::get('/dashboard', 'HomeController@index')->name('admin.dashboard');
 Route::get('/api', 'HomeController@api')->name('admin.api');
 Route::get('/categories', 'AdminController@categories')->name('admin.categories');
 Route::get('/user', 'AdminController@users')->name('admin.users');
+Route::get('/developer', 'AdminController@developer')->name('admin.developer');
 
 
   // Route::get('api/categories', 'CategoryController@index')->middleware('can:isAdmin');

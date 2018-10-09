@@ -203,6 +203,14 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="{{route('admin.developer')}}" class="nav-link">
+              <i class="nav-icon fa fa-cogs"></i>
+              <p>
+                Developer
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{route('admin.dashboard')}}" class="nav-link">
               <i class="nav-icon fa fa-user text-orange"></i>
               <p>
