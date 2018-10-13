@@ -24,6 +24,8 @@ Route::prefix('admin')->group(function(){
 Route::apiResources ([
   'admin/api/user' => 'API\UserController'
 ]);
+Route::get('admin/api/profile', 'API\UserController@profile');
+Route::put('admin/api/profile', 'API\UserController@updateProfile');
 
 
 Route::get('admin/api/categories', 'CategoryController@index');

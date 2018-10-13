@@ -22,11 +22,13 @@ Auth::routes();
 
 Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
 // Route::prefix('admin')->group(function(){
+Route::get('/', 'HomeController@index')->name('admin.dashboard');
 Route::get('/dashboard', 'HomeController@index')->name('admin.dashboard');
 Route::get('/api', 'HomeController@api')->name('admin.api');
 Route::get('/categories', 'AdminController@categories')->name('admin.categories');
 Route::get('/user', 'AdminController@users')->name('admin.users');
 Route::get('/developer', 'AdminController@developer')->name('admin.developer');
+Route::get('/profile', 'AdminController@profile')->name('admin.profile');
 
 
   // Route::get('api/categories', 'CategoryController@index')->middleware('can:isAdmin');

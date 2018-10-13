@@ -71,6 +71,9 @@ Vue.component(
 Vue.component(
   'users', require('./components/admin/Users.vue'),
 );
+Vue.component(
+  'profile', require('./components/admin/Profile.vue'),
+);
 
 // const app = new Vue({
 //     el: '#app'
