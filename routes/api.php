@@ -38,14 +38,3 @@ Route::put('admin/api/category', 'CategoryController@store');
 // UPDATE ARTICLE
 Route::delete('admin/api/category/{id}', 'CategoryController@destroy');
 
-Route::group(['middleware' => 'can:isAdmin'], function () {
-  // Route::get('api/categories', 'CategoryController@index')->middleware('can:isAdmin');
-  // // LIST SINGLE ARTICLE
-  // Route::get('api/category/{id}', 'CategoryController@show')->middleware('can:isAdmin');
-  // // CREATE NEW ARTICLEcategory
-  // Route::post('api/category', 'CategoryController@store');
-  // // UPDATE ARTICLE
-  // Route::put('api/category', 'CategoryController@store');
-  // // UPDATE ARTICLE
-  // Route::delete('api/category/{id}', 'CategoryController@destroy');
-});

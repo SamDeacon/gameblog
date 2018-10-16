@@ -1,4 +1,4 @@
-<header class="header site-header shadow-sm">
+<header class="header site-header shadow-sm navbar-fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-black top-menu">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/logo/retro-shrine-h.png')}}" alt=""></a>

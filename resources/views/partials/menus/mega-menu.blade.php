@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mega-menu">
     <div class="container justify-content-center">
-        <ul class="navbar-nav text-center">
+        <ul class="navbar-nav text-center collapse navbar-collapse" id="navbarColor01">
             <li class="nav-item"><a class="nav-link" href="{{ url('#') }}">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('#') }}">News</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('#') }}">Reviews</a></li>

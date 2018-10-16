@@ -15637,11 +15637,15 @@ a {
   border-bottom: 1px solid rgba(238, 187, 0, 0.7);
 }
 
+.mega-menu {
+  font-size: 95%;
+}
+
 @media (min-width: 992px) {
   .mega-menu .navbar-nav > .nav-item {
     padding: 0 2em;
-    border-right: 1px solid rgba(170, 170, 170, 0.5);
-    border-left: 1px solid rgba(0, 150, 198, 0.4);
+    border-right: 1px solid rgba(0, 0, 0, 0.47);
+    border-left: 1px solid #444943;
   }
 
   .mega-menu .navbar-nav > .nav-item:first-child {
@@ -15650,6 +15654,20 @@ a {
 
   .mega-menu .navbar-nav > .nav-item:last-child {
     border-right: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .right-links {
+    font-size: 95%;
+    margin-top: -2.75rem;
+    float: right;
+    display: block;
+  }
+
+  .right-links > li {
+    display: inline-block;
+    padding-left: 0.5em;
   }
 }
 
@@ -15728,6 +15746,12 @@ h1.divider-title {
   display: inline-block;
   background: #323630;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .margin-top-responsive .right-half.mt-3 {
+    margin-top: 0 !important;
+  }
 }
 
 .navbar-laravel {

@@ -32,7 +32,7 @@
       </ul>
     </nav>
 
-    <div class="card"v-for="category in categories" v-bind:key="category.id">
+    <div class="card" v-for="category in categories" v-bind:key="category.id">
       <div class="card card-header text-white bg-primary">
         <h3 class="mb-0">{{ category.title }} | <small>{{category.id}}</small>
         <a @click="deleteCategory(category.id)" class="collapse-link cursor-pointer">
@@ -44,7 +44,7 @@
         </h3>
       </div>
       <div class="card-body">
-        <small><u><strong>Slug:</strong></u> {{ category.slug }}</small></p>
+        <small><u><strong>Slug:</strong></u> {{ category.slug }}</small>
         <p><u><strong>Description:</strong></u> {{ category.description }}</p>
       </div>
     </div>
@@ -100,7 +100,11 @@
           })
             .then(res => res.json())
             .then(data => {
-              alert('Category Removed');
+              swal(
+                'Deleted!',
+                'Category has been deleted.',
+                'success'
+              )
               this.fetchCategories();
             })
             .catch(err => console.log(err));

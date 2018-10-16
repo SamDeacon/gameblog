@@ -24,11 +24,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-      if(!Gate::allows('isAdmin')){
-        return redirect('/');
-      } else {
         return view('admin.dashboard');
-      }
     }
     public function categories()
     {

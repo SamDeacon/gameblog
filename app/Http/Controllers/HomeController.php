@@ -16,10 +16,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-      if(!Gate::allows('isAdmin')){
-        return redirect('/');
-      } else {
+      if(Gate::allows('isAdminOrEditor')){
+        
         return view('admin.dashboard');
+      } else {
+        return redirect('/');
       }
     }
     public function homepage()

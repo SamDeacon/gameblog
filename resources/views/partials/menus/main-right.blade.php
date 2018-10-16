@@ -1,5 +1,5 @@
 @if (Route::has('login'))
-    <ul class="navbar-nav">
+    <ul class="navbar-nav right-links">
             @auth
             <li class="nav-item"><a class="nav-link" href="{{ url('#') }}">Messages</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('admin/dashboard') }}">Dashboard</a></li>

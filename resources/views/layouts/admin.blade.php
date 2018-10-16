@@ -173,6 +173,7 @@
                </p>
              </a>
            </li>
+          @can('isAdminOrEditor')
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-cog text-yellow"></i>
@@ -188,6 +189,7 @@
                   <p>Categories</p>
                 </a>
               </li>
+              @can('isAdmin')
               <li class="nav-item">
                 <a href="{{route('admin.users')}}" class="nav-link">
                   &nbsp;&nbsp;<i class="nav-icon fa fa-users text-yellow"></i>
@@ -200,6 +202,7 @@
                   <p>User Blocklist</p>
                 </a>
               </li>
+              @endcan
             </ul>
           </li>
           <li class="nav-item">
@@ -210,6 +213,7 @@
               </p>
             </a>
           </li>
+          @endcan 
           <li class="nav-item">
             <a href="{{route('admin.profile')}}" class="nav-link">
               <i class="nav-icon fa fa-user text-orange"></i>
@@ -218,6 +222,7 @@
               </p>
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="{{url('/logout')}}" class="nav-link">
               <i class="nav-icon fa fa-power-off text-red"></i>

@@ -21,7 +21,8 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 
 Auth::routes();
 
-Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
+// Route::prefix('admin')->middleware('can:isAdmin')->group(function(){
+Route::prefix('admin')->middleware('auth')->group(function(){
 // Route::prefix('admin')->group(function(){
 Route::get('/', 'HomeController@index')->name('admin.dashboard');
 Route::get('/dashboard', 'HomeController@index')->name('admin.dashboard');

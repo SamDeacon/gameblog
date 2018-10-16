@@ -5,19 +5,35 @@
 .top-menu{
     border-bottom: 1px solid rgba($brand-yellow, 0.7);
 }
+.mega-menu{
+    font-size: 95%;
+}
 
 @media(min-width:992px){
     .mega-menu{
         .navbar-nav>.nav-item{
             padding: 0 2em;
-            border-right: 1px solid rgba(#aaa, 0.5);
-            border-left: 1px solid rgba($brand-blue,0.4);
+            border-right: 1px solid rgba(black, 0.47);
+            border-left: 1px solid $bg-light-green;
             &:first-child{
                 border-left: none;
             }
             &:last-child{
                 border-right: none;
             }
+        }
+    }
+}
+@media(max-width:992px){
+    .right-links{
+        font-size: 95%;
+        margin-top: -2.75rem;
+        float: right;
+        display: block;
+        >li{
+            display: inline-block;
+            // padding: 0 0.5em;
+            padding-left: 0.5em;
         }
     }
 }

@@ -72182,7 +72182,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }).then(function (res) {
           return res.json();
         }).then(function (data) {
-          alert('Category Removed');
+          swal('Deleted!', 'Category has been deleted.', 'success');
           _this2.fetchCategories();
         }).catch(function (err) {
           return console.log(err);
@@ -72457,7 +72457,6 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c("small", [_vm._m(0, true), _vm._v(" " + _vm._s(category.slug))]),
-            _c("p"),
             _vm._v(" "),
             _c("p", [
               _vm._m(1, true),

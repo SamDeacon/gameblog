@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-  <div class="container mt-5 mb-5">
-    <div class="row justify-content-between">
+  <section class="container mt-5 mb-5">
+    <div class="row justify-content-between margin-top-responsive">
         <div  class="col-md-6 rounded">
           <div id="carouselExampleIndicators" class="carousel slide rounded" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -34,7 +34,7 @@
             </a>
           </div>
         </div>
-      <div class="col-md-6 pl-lg-5">
+      <div class="col-md-6 pl-lg-5 right-half mt-3">
           <div class="bg-dark card custom-card rounded">
               <div class="card-header">
                   <span class="card-header-icon"><i class="nav-icon fa fa-book-open text-cyan"></i></span>
@@ -50,11 +50,11 @@
           </div>
       </div>
     </div>
-  </div>
+  </section>
   <div class="full-divider">
       <h2 class="divider-title text-center">Reviews</h2>
   </div>
-
+  @include('partials.home.home-reviews')
 
         <img class="big-mofo-img" src="/img/retroshrine-compressed.jpg" alt="" style="max-width: 100%;">
 @endsection
