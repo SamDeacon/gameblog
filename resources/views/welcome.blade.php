@@ -2,19 +2,9 @@
 @section('content')
         <div class="flex-center position-ref full-height">
 
-            <div class="content-laravelwelcome">
-                <div class="title m-b-md">
-                    Test
-                </div>
-                <hr>
-                <h3>Articles</h3>
-                @foreach ($articles as $article)
-                    <p>{{ $article->title }} | ID: {{ $article->category_id }}</br>
-                    <small>Category: </small>{{ $article->category->title }}</p>
-                    <br>
-                @endforeach
-                {{$articles->links()}}
-            </div>
+                <h1>welcome blade php do not use</h1>
+            
+            welcome blade php do not use
         </div>
-        <img class="big-mofo-img" src="/img/retroshrine-compressed.jpg" alt="">
+        <img class="big-mofo-img" src="/img/retroshrine-compressed.jpg" alt="" style="max-width: 100%;">
 @endsection

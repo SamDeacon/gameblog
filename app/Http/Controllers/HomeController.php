@@ -22,13 +22,9 @@ class HomeController extends Controller
         return view('admin.dashboard');
       }
     }
-    public function api()
-    {
-        return view('admin.api');
-    }
     public function homepage()
     {
-        $articles = Article::orderBy('id', 'desc')->paginate(10);
-        return view('welcome')->withArticles($articles);
+        $articles = Article::orderBy('created_at','desc')->take(5)->get();
+        return view('pages.home-page')->withArticles($articles);
     }
 }

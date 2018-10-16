@@ -101,7 +101,10 @@ padding: 10px;
 
                       <div class="form-group">
                           <label for="photo" class="col-sm-2 control-label">Profile Photo</label>
-                          <p class="thumbnail">
+                          <p class="control-label">
+                            current photo name is:<br>
+
+                            {{ form.photo }}
                           </p>
 
                           <div class="col-sm-12">
@@ -162,13 +165,16 @@ padding: 10px;
 
         methods:{
           getProfilePhoto(){
-            return "/img/profile/"+this.form.photo;
+            let photo = (this.form.photo.length > 75) ? this.form.photo : "/img/profile/"+this.form.photo ;
+
+            return photo;
           },
           updateInfo(){
             this.$Progress.start();
             this.form.put('api/profile/')
             .then(() =>{
               this.$Progress.finish();
+              Fire.$emit('AfterChange');
             })
             .catch(() =>{
               this.$Progress.fail();
@@ -193,8 +199,15 @@ padding: 10px;
           }
         },
         created() {
+
+          axios.get("api/profile")
+          .then(({ data }) => (this.form.fill(data)));
+
+          Fire.$on('AfterChange', () => {
             axios.get("api/profile")
             .then(({ data }) => (this.form.fill(data)));
+          });
+
         }
     }
 </script>

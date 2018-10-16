@@ -1,0 +1,36 @@
+@import "navbar";
+@import "cards";
+
+
+
+.full-divider{
+    text-align: center;
+    position: relative;
+    &:before{
+        position: absolute;
+        display: block;
+        content: '';
+        height: 1px;
+        width: 100%;
+        background: $brand-yellow;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 1;
+    }
+    h2.divider-title, h3.divider-title, h1.divider-title{
+        z-index: 11;
+        font-size: 1.3em;
+    }
+}
+h2.divider-title, h3.divider-title, h1.divider-title{
+    font-family: $font-heading-display;
+    margin-bottom: 0;
+    padding: 6px 22px;
+    display: inline-block;
+    background: $bg-green;
+    position: relative;
+
+}

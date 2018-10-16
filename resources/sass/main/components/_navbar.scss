@@ -1,0 +1,35 @@
+.navbar-brand img{
+    width: 150px;
+}
+
+.top-menu{
+    border-bottom: 1px solid rgba($brand-yellow, 0.7);
+}
+
+@media(min-width:992px){
+    .mega-menu{
+        .navbar-nav>.nav-item{
+            padding: 0 2em;
+            border-right: 1px solid rgba(#aaa, 0.5);
+            border-left: 1px solid rgba($brand-blue,0.4);
+            &:first-child{
+                border-left: none;
+            }
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+}
+
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    color: pink;
+}

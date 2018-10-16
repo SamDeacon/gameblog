@@ -25,7 +25,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
+        <a href="{{ route('admin.dashboard') }}" class="nav-link">Dashboard</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('logout') }}" class="nav-link">Logout</a>
@@ -145,7 +145,7 @@
     <a href="/" class="brand-link">
       <img src="{{ asset('img/admin/RETRO SHRINE.png')}}" alt="Retroshrine" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Retroshrine</span>
+      <span class="brand-text font-weight-light"><img src="{{ asset('img/admin/RETRO SHRINE HORIZONTAL.png')}}" width="145"></span>
     </a>
 
     <!-- Sidebar -->
@@ -265,6 +265,6 @@
 
 <!-- REQUIRED SCRIPTS -->
 
-<script src="/js/app.js"> </script>
+<script src="/js/admin.js"> </script>
 </body>
 </html>

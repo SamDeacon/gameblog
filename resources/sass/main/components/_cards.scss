@@ -1,0 +1,26 @@
+.custom-card{
+    overflow: hidden;
+  }
+
+.custom-card{
+    .card-header{
+        padding-left: 1.25em;
+        .card-header-icon, h3, h2{
+            display: inline;
+
+            padding: 0;
+        }
+        .card-header-icon{
+            padding-left: 0;
+            padding-right: 0.75em;
+            margin-right: 0.6em;
+            border-right: 1px solid $bg-light-green;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.card-header{
+    padding-left:0;
+    padding-right:0;
+  }

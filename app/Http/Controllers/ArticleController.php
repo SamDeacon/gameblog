@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+use App\Article;
 
 class ArticleController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +17,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+      $articles = Article::orderBy('id', 'desc')->paginate(20);
+      return view('articles.landing-page')->withArticles($articles);
     }
 
 

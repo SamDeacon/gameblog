@@ -1,0 +1,86 @@
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+    font-family: $font-heading-display;
+}
+
+h1, h2, h3{
+  &.display-title{
+    font-family: $font-heading-display;
+    color: $brand-red;
+  }
+}
+
+h2, h3 {
+  &.display-title{
+    font-size: 1.1em
+  }
+}
+
+a{
+  color: inherit;
+}
+
+.bg-dark{
+  background-color: $bg-dark-green!important;
+}
+.bg-black{
+  @extend .bg-dark;
+  background-color: #000!important;
+}
+.bg-light-green{
+  @extend .bg-secondary;
+  background-color: #444943!important;
+}
+
+.navbar-dark.bg-black .navbar-nav .nav-link {
+  &:hover{
+    color: $brand-blue;
+  }
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  &:hover{
+    color: $brand-yellow;
+  }
+}
+
+
+
+.list-group-item-secondary{
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgba(#bbb, 0.35);
+}
+
+.list-group-item{
+
+  padding: 0.6rem 1rem;
+  &:first-of-type{
+    padding-top: 1em;
+  }
+  &:last-of-type{
+    padding-bottom: 1em;
+    border-bottom: none;
+  }
+}
+
+.rounded{
+  border-radius: 0.5rem !important;
+}
+
+/* Dropdown menu background color*/
+
+.navbar-nav > li  .dropdown-menu {     
+  background-color: #666;  
+}
+
+/* Dropdown menu font color*/ 
+
+ .navbar-nav > li > .dropdown-menu a{   
+   color: #e7e7e7;  
+  }
