@@ -26,6 +26,8 @@ window.Form = Form;
 Vue.component(HasError.name, HasError);
 Vue.component(AlertError.name, AlertError);
 
+Vue.component('pagination', require('laravel-vue-pagination'));
+
 Vue.use(VueProgressBar, {
   color: 'rgb(143, 255, 199)',
   failedColor: 'red',
@@ -39,6 +41,9 @@ Vue.filter('capitalize', function(value){
 });
 Vue.filter('myDate', function(date){
   return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+});
+Vue.filter('releaseDate', function(date){
+  return moment(date).format('MMM YYYY');
 });
 
 window.Fire = new Vue();
@@ -71,8 +76,13 @@ Vue.component(
 Vue.component(
   'users', require('./components/admin/Users.vue'),
 );
+
 Vue.component(
   'profile', require('./components/admin/Profile.vue'),
+);
+
+Vue.component(
+  'consoles', require('./components/admin/Consoles.vue'),
 );
 
 // const app = new Vue({

@@ -1,12 +1,5 @@
 <template>
   <div class="justify-content-center">
-    <!-- <div class="card card-default">
-        <div class="card-header">Users Component</div>
-
-        <div class="card-body">
-            I'm an example component.
-        </div>
-    </div> -->
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">User Table</h3>
@@ -20,13 +13,14 @@
         <table class="table table-hover">
           <tbody><tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Name <i @click="sortByName" class="fa fa-sort fa-fw cursor-pointer text-blue"></i>
+            </th>
             <th>Email</th>
-            <th>Type</th>
+            <th>Type <i @click="sortByType" class="fa fa-sort fa-fw cursor-pointer text-blue"></i></th>
             <th>Registered At</th>
             <th>Modify</th>
           </tr>
-          <tr v-for="user in users" :key="user.id">
+          <tr v-for="user in users.data" :key="user.id">
             <td>{{user.id}}</td>
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
@@ -43,11 +37,13 @@
           </tr>
         </tbody></table>
       </div>
+
+      <div class="card-footer">
+        <pagination :data="users" 
+        @pagination-change-page="getResults"></pagination>
+      </div>
       <!-- /.card-body -->
     </div>
-    <!-- /.card -->
-
-    <!-- /.Modal -->
     <!-- Modal -->
     <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -116,6 +112,7 @@
       data() {
         return {
           editmode: false,
+          sortby: 'default',
           users : {},
           form: new Form({
             id: '',
@@ -129,6 +126,24 @@
         }
       },
       methods: {
+        getResults(page = 1) {
+          if(this.sortby == 'name'){
+            axios.get('api/usersbyname?page=' + page)
+            .then(response => {
+              this.users = response.data;
+            });
+            } else if(this.sortby == 'type') { 
+            axios.get('api/usersbytype?page=' + page)
+            .then(response => {
+              this.users = response.data;
+            });
+            } else { 
+            axios.get('api/user?page=' + page)
+            .then(response => {
+              this.users = response.data;
+            });
+          }
+        },
         updateUser(id){
           this.$Progress.start();
           this.form.put('api/user/'+this.form.id)
@@ -185,7 +200,18 @@
           })
         },
         fetchUsers(){
-          axios.get("api/user").then(({ data }) => (this.users = data.data))
+          axios.get("api/user")
+          .then(({ data }) => (this.users = data))
+        },
+        sortByName(){
+          this.sortby = 'name';
+          axios.get("api/usersbyname")
+          .then(({ data }) => (this.users = data))
+        },
+        sortByType(){
+          this.sortby = 'type';
+          axios.get("api/usersbytype")
+          .then(({ data }) => (this.users = data))
         },
         createUser(){
           this.$Progress.start();

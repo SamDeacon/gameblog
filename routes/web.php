@@ -28,6 +28,7 @@ Route::get('/', 'HomeController@index')->name('admin.dashboard');
 Route::get('/dashboard', 'HomeController@index')->name('admin.dashboard');
 Route::get('/categories', 'AdminController@categories')->name('admin.categories');
 Route::get('/user', 'AdminController@users')->name('admin.users');
+Route::get('/games/consoles', 'AdminController@consoles')->name('admin.games.consoles');
 Route::get('/developer', 'AdminController@developer')->name('admin.developer');
 Route::get('/profile', 'AdminController@profile')->name('admin.profile');
 });

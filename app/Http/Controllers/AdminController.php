@@ -42,4 +42,8 @@ class AdminController extends Controller
     {
         return view('admin.profile');
     }
+    public function consoles()
+    {
+        return view('admin.games.consoles');
+    }
 }

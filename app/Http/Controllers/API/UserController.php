@@ -30,7 +30,21 @@ class UserController extends Controller
     {
       // return User::latest()->paginate(10);
       $this->authorize('isAdminOrEditor');
-      return User::latest()->paginate(70);
+      return User::latest()->paginate(10);
+
+    }
+    public function usersByName()
+    {
+      // return User::latest()->paginate(10);
+      $this->authorize('isAdminOrEditor');
+      return User::orderBy('name')->paginate(10);
+
+    }
+    public function usersByType()
+    {
+      // return User::latest()->paginate(10);
+      $this->authorize('isAdminOrEditor');
+      return User::orderBy('usertype')->paginate(10);
 
     }
 
